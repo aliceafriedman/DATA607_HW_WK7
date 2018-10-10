@@ -3,21 +3,32 @@
   "Auth1.Last": "Newport",
   "Auth1.First": "Cal",
   "Auth2.Last": "",
-  "Auth2.Last":"",
+  "Auth2.First":"",
+  "Year":2006,
   "Short.Description":"A guide for getting better grades in college, most of which still applies for grad school, and some of which is useful in professional settings"
 },
-{"title": "How to Be a Straight-A Student",
+{"title": "Deep Work",
   "Auth1.Last": "Newport",
   "Auth1.First": "Cal",
   "Auth2.Last": "",
-  "Auth2.Last":"",
-  "Short.Description":"A guide for getting better grades in college, most of which still applies for grad school, and some of which is useful in professional settings
+  "Auth2.First":"",
+  "Year":2016,
+ "Short.Description":"Treatise on the importance of cariving out time for deep concerntaiton, with many helpful, practical tips for improving your productivity at work"
 },
-{"title": "How to Be a Straight-A Student",
-  "Auth1.Last": "Newport",
-  "Auth1.First": "Cal",
+{"title": "It's Hard to Make a Difference When You Can't Find Your Keys",
+  "Auth1.Last": "Paul",
+  "Auth1.First": "Marilyn",
   "Auth2.Last": "",
-  "Auth2.Last":"",
-  "Short.Description":"A guide for getting better grades in college, most of which still applies for grad school, and some of which is useful in professional settings
+  "Auth2.First":"",
+  "Year":2003,
+ "Short.Description":"Helpful tips on time management, organization, and making sure you get places on time written by someone who really understands what it's like not to have those habits and skills"
+},
+{"title": "Yoga for Regular Guys",
+  "Auth1.Last": "Page",
+  "Auth1.First": "Diamond Dallas",
+  "Auth2.Last": "Aaron",
+  "Auth2.First":"Craig",
+  "Year":2005,
+ "Short.Description":"Easy to follow workouts for folks who aren't too flexible"
 }
 ]
