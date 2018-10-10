@@ -1,0 +1,38 @@
+---
+title: "Loading Tables from HTML, JSON, and AJAX"
+author: "Alice Friedman"
+date: "October 9, 2018"
+output:
+  prettydoc::html_pretty:
+    theme: leonids
+    highlight: vignette
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Setup
+```{r, results="hide", message=FALSE, warning=FALSE}
+library(knitr)
+library(prettydoc)
+library(rvest)
+library(dplyr)
+```
+
+##HTML
+First, store the raw HTML file as an R object using the ```read_html``` function.
+```{r}
+books.html <- read_html("https://raw.githubusercontent.com/aliceafriedman/DATA607_HW_WK7/master/books.html")
+```
+
+Then, parse the R object, ```html```, using the ```html_nodes``` function from the ```rvest``` library.
+```{r}
+books.html.table <- html_nodes(books.html, "table")
+books.html.table <- html_table(books.html.table[1], fill = TRUE) %>% as.data.frame() %>% glimpse()
+```
+
+
+##JSON
+
+##AJAX
