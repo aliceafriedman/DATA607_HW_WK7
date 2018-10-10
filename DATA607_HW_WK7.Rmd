@@ -4,7 +4,7 @@ author: "Alice Friedman"
 date: "October 9, 2018"
 output:
   prettydoc::html_pretty:
-    theme: leonids
+    theme: hpstr
     highlight: vignette
 ---
 
@@ -15,9 +15,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ##Setup
 ```{r, results="hide", message=FALSE, warning=FALSE}
 library(knitr)
+library(kableExtra)
 library(prettydoc)
 library(rvest)
 library(dplyr)
+remove(list=ls())
 ```
 
 ##HTML
@@ -30,7 +32,13 @@ Then, parse the R object, ```html```, using the ```html_nodes``` function from t
 ```{r}
 books.html.table <- html_nodes(books.html, "table")
 books.html.table <- html_table(books.html.table[1], fill = TRUE) %>% as.data.frame() %>% glimpse()
-kable(books.html.table)
+books.html.table %>% 
+  rename(Auth1.Last = First.Author.Last.Name,
+         Auth1.First = First.Author.First.Name,
+         Auth2.Last = Second.Author.Last.Name,
+         Auth2.First = Second.Author.First.Name,
+         Year = Year.Published) %>% 
+  kable() %>% kable_styling(bootstrap_options = "responsive")
 ```
 
 
