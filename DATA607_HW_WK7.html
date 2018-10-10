@@ -92,6 +92,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="kw">library</span>(prettydoc)
 <span class="kw">library</span>(rvest)
 <span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(jsonlite)
 <span class="kw">remove</span>(<span class="dt">list=</span><span class="kw">ls</span>())</code></pre></div>
 </div>
 <div id="html" class="section level2">
@@ -111,11 +112,6 @@ books.html.table &lt;-<span class="st"> </span><span class="kw">html_table</span
 ## $ Year.Published           &lt;int&gt; 2006, 2016, 2003, 2005
 ## $ Short.Description        &lt;chr&gt; &quot;A guide for getting better grades in...</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">books.html.table <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">rename</span>(<span class="dt">Auth1.Last =</span> First.Author.Last.Name,
-         <span class="dt">Auth1.First =</span> First.Author.First.Name,
-         <span class="dt">Auth2.Last =</span> Second.Author.Last.Name,
-         <span class="dt">Auth2.First =</span> Second.Author.First.Name,
-         <span class="dt">Year =</span> Year.Published) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">kable</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="st">&quot;responsive&quot;</span>)</code></pre></div>
 <table class="table table-responsive" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -124,19 +120,19 @@ books.html.table &lt;-<span class="st"> </span><span class="kw">html_table</span
 Title
 </th>
 <th style="text-align:left;">
-Auth1.Last
+First.Author.Last.Name
 </th>
 <th style="text-align:left;">
-Auth1.First
+First.Author.First.Name
 </th>
 <th style="text-align:left;">
-Auth2.Last
+Second.Author.Last.Name
 </th>
 <th style="text-align:left;">
-Auth2.First
+Second.Author.First.Name
 </th>
 <th style="text-align:right;">
-Year
+Year.Published
 </th>
 <th style="text-align:left;">
 Short.Description
@@ -235,6 +231,136 @@ Easy to follow workouts for folks who aren’t too flexible.
 </div>
 <div id="json" class="section level2">
 <h2>JSON</h2>
+<p>First, read, the JSON obects into R using the <code>jsonlite</code> pakage. By setting the <code>simplifyVector</code> option to <code>TRUE</code>, this will automatically create a data frame.</p>
+<p>Unlike reading from HTML, this will also create a row number.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">books.json &lt;-<span class="st"> </span><span class="kw">read_json</span>(<span class="st">&quot;https://raw.githubusercontent.com/aliceafriedman/DATA607_HW_WK7/master/books.json&quot;</span>,  <span class="dt">simplifyVector =</span> <span class="ot">TRUE</span>)
+
+books.json <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">glimpse</span>()</code></pre></div>
+<pre><code>## Observations: 4
+## Variables: 7
+## $ title             &lt;chr&gt; &quot;How to Be a Straight-A Student&quot;, &quot;Deep Work...
+## $ Auth1.Last        &lt;chr&gt; &quot;Newport&quot;, &quot;Newport&quot;, &quot;Paul&quot;, &quot;Page&quot;
+## $ Auth1.First       &lt;chr&gt; &quot;Cal&quot;, &quot;Cal&quot;, &quot;Marilyn&quot;, &quot;Diamond Dallas&quot;
+## $ Auth2.Last        &lt;chr&gt; &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;Aaron&quot;
+## $ Auth2.First       &lt;chr&gt; &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;Craig&quot;
+## $ Year              &lt;int&gt; 2006, 2016, 2003, 2005
+## $ Short.Description &lt;chr&gt; &quot;A guide for getting better grades in colleg...</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">books.json <span class="op">%&gt;%</span><span class="st">  </span><span class="kw">kable</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="st">&quot;responsive&quot;</span>)</code></pre></div>
+<table class="table table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+title
+</th>
+<th style="text-align:left;">
+Auth1.Last
+</th>
+<th style="text-align:left;">
+Auth1.First
+</th>
+<th style="text-align:left;">
+Auth2.Last
+</th>
+<th style="text-align:left;">
+Auth2.First
+</th>
+<th style="text-align:right;">
+Year
+</th>
+<th style="text-align:left;">
+Short.Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+How to Be a Straight-A Student
+</td>
+<td style="text-align:left;">
+Newport
+</td>
+<td style="text-align:left;">
+Cal
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+2006
+</td>
+<td style="text-align:left;">
+A guide for getting better grades in college, most of which still applies for grad school, and some of which is useful in professional settings
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Deep Work
+</td>
+<td style="text-align:left;">
+Newport
+</td>
+<td style="text-align:left;">
+Cal
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+2016
+</td>
+<td style="text-align:left;">
+Treatise on the importance of cariving out time for deep concerntaiton, with many helpful, practical tips for improving your productivity at work
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+It’s Hard to Make a Difference When You Can’t Find Your Keys
+</td>
+<td style="text-align:left;">
+Paul
+</td>
+<td style="text-align:left;">
+Marilyn
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:right;">
+2003
+</td>
+<td style="text-align:left;">
+Helpful tips on time management, organization, and making sure you get places on time written by someone who really understands what it’s like not to have those habits and skills
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Yoga for Regular Guys
+</td>
+<td style="text-align:left;">
+Page
+</td>
+<td style="text-align:left;">
+Diamond Dallas
+</td>
+<td style="text-align:left;">
+Aaron
+</td>
+<td style="text-align:left;">
+Craig
+</td>
+<td style="text-align:right;">
+2005
+</td>
+<td style="text-align:left;">
+Easy to follow workouts for folks who aren’t too flexible
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="ajax" class="section level2">
 <h2>AJAX</h2>
