@@ -30,6 +30,7 @@ Then, parse the R object, ```html```, using the ```html_nodes``` function from t
 ```{r}
 books.html.table <- html_nodes(books.html, "table")
 books.html.table <- html_table(books.html.table[1], fill = TRUE) %>% as.data.frame() %>% glimpse()
+kable(books.html.table)
 ```
 
 

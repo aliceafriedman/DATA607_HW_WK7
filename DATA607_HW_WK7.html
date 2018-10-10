@@ -107,6 +107,58 @@ books.html.table &lt;-<span class="st"> </span><span class="kw">html_table</span
 ## $ Second.Author.First.Name &lt;chr&gt; &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;Craig&quot;
 ## $ Year.Published           &lt;int&gt; 2006, 2016, 2003, 2005
 ## $ Short.Description        &lt;chr&gt; &quot;A guide for getting better grades in...</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">kable</span>(books.html.table)</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Title</th>
+<th align="left">First.Author.Last.Name</th>
+<th align="left">First.Author.First.Name</th>
+<th align="left">Second.Author.Last.Name</th>
+<th align="left">Second.Author.First.Name</th>
+<th align="right">Year.Published</th>
+<th align="left">Short.Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">How to be a Straight-A Student</td>
+<td align="left">Newport</td>
+<td align="left">Cal</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right">2006</td>
+<td align="left">A guide for getting better grades in college, most of which still applies for grad school, and some of which is useful in professional settings</td>
+</tr>
+<tr class="even">
+<td align="left">Deep Work</td>
+<td align="left">Newport</td>
+<td align="left">Cal</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right">2016</td>
+<td align="left">Treatise on the importance of cariving out time for deep concerntaiton, with many helpful, practical tips for improving your productivity at work</td>
+</tr>
+<tr class="odd">
+<td align="left">It’s Hard to Make a Difference When You Can’t Find Your Keys</td>
+<td align="left">Paul</td>
+<td align="left">Marilyn</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="right">2003</td>
+<td align="left">Helpful tips on time management, organization, and making sure you get places on time written by someone who really understands what it’s like not to have those habits and skills.</td>
+</tr>
+<tr class="even">
+<td align="left">Yoga for Regular Guys</td>
+<td align="left">Dallas</td>
+<td align="left">Diamon Dallas</td>
+<td align="left">Aaron</td>
+<td align="left">Craig</td>
+<td align="right">2005</td>
+<td align="left">Easy to follow workouts for folks who aren’t too flexible.</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="json" class="section level2">
 <h2>JSON</h2>
