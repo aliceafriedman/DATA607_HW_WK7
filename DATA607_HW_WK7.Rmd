@@ -20,6 +20,8 @@ library(prettydoc)
 library(rvest)
 library(dplyr)
 library(jsonlite)
+library(RCurl)
+library(XML)
 remove(list=ls())
 ```
 
@@ -49,4 +51,11 @@ books.json %>%  kable() %>% kable_styling(bootstrap_options = "responsive")
 ```
 
 
-##AJAX
+##XML
+
+Use ```RCurl``` function ```getURL``` to download the XML file from the web, then use the ```xmlParse``` function to read the XML file.
+
+```{r}
+books.xml <- getURL("https://raw.githubusercontent.com/aliceafriedman/DATA607_HW_WK7/master/books2.xml")
+books.xml <- xmlParse(books.xml)
+```

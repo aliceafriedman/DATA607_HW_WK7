@@ -12,15 +12,17 @@
     <Auth1.Last>Newport</Auth1.Last>
     <Auth1.First>Cal</Auth1.First>
     <Year>2016</Year>
-    <Short.Description>Treatise on the importance of cariving out time for deep concerntaiton, with many helpful, practical tips for improving your productivity at work<A guide for getting better grades in college, most of which still applies for grad school, and some of which is useful in professional settings</Short.Description>
+    <Short.Description>Treatise on the importance of cariving out time for deep concerntaiton, with many helpful, practical tips for improving your productivity at work</Short.Description>
   </book>
-   <book>
+
+  <book>
     <title>It's Hard to Make a Difference When You Can't Find Your Keys</title>
     <Auth1.Last>Paul</Auth1.Last>
     <Auth1.First>Marilyn</Auth1.First>
     <Year>2003</Year>
     <Short.Description>Helpful tips on time management, organization, and making sure you get places on time written by someone who really understands what it's like not to have those habits and skills</Short.Description>
-  </book>
+   </book>
+   
     <book>
     <title>Yoga for Regular Guys</title>
     <Auth1.Last>Page</Auth1.Last>
@@ -30,4 +32,5 @@
     <Year>2005</Year>
     <Short.Description>Helpful tips on time management, organization, and making sure you get places on time written by someone who really understands what it's like not to have those habits and skills</Short.Description>
   </book>
+
 </books>
