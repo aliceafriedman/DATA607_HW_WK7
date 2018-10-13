@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+  <book>
+    <title>How to Be a Straight-A Student</title>
+    <Auth1.Last>Newport</Auth1.Last>
+    <Auth1.First>Cal</Auth1.First>
+    <Year>2006</Year>
+    <Short.Description>A guide for getting better grades in college, most of which still applies for grad school, and some of which is useful in professional settings</Short.Description>
+  </book>  
+</books>
