@@ -4,6 +4,8 @@
     <title>How to Be a Straight-A Student</title>
     <Auth1.Last>Newport</Auth1.Last>
     <Auth1.First>Cal</Auth1.First>
+    <Auth2.Last></Auth2.Last>
+    <Auth2.First></Auth2.First>
     <Year>2006</Year>
     <Short.Description>A guide for getting better grades in college, most of which still applies for grad school, and some of which is useful in professional settings</Short.Description>
   </book>  
@@ -11,6 +13,8 @@
     <title>Deep Work</title>
     <Auth1.Last>Newport</Auth1.Last>
     <Auth1.First>Cal</Auth1.First>
+    <Auth2.Last></Auth2.Last>
+    <Auth2.First></Auth2.First>
     <Year>2016</Year>
     <Short.Description>Treatise on the importance of cariving out time for deep concerntaiton, with many helpful, practical tips for improving your productivity at work</Short.Description>
   </book>
@@ -18,6 +22,8 @@
     <title>It's Hard to Make a Difference When You Can't Find Your Keys</title>
     <Auth1.Last>Paul</Auth1.Last>
     <Auth1.First>Marilyn</Auth1.First>
+    <Auth2.Last></Auth2.Last>
+    <Auth2.First></Auth2.First>
     <Year>2003</Year>
     <Short.Description>Helpful tips on time management, organization, and making sure you get places on time written by someone who really understands what it's like not to have those habits and skills</Short.Description>
    </book>   
