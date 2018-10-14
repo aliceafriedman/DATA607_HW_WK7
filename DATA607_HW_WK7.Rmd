@@ -73,6 +73,6 @@ books.xml.df %>% kable() %>% kable_styling(bootstrap_options = "responsive")
 
 ##Conclusion
 
-Althought the kables look identical, the XML-to-R process generates a data frame where each column is saved as a factor. The HTML and JSON files generated a file that correctly identified character and numeric values.
+Although the kables look identical, the XML-to-R process generates a data frame where each column is saved as a factor. The HTML and JSON files generated a file that correctly identified character and numeric values.
   
   

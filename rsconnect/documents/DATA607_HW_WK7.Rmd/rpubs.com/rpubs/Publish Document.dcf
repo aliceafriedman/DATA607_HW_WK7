@@ -1,0 +1,10 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/429286/8be3127ac8f348219aa73ce72c25001f
+bundleId: https://api.rpubs.com/api/v1/document/429286/8be3127ac8f348219aa73ce72c25001f
+url: http://rpubs.com/aliceafriedman/429286
+when: 1539561337.69537
