@@ -1,10 +1,10 @@
 ---
-title: "Loading Tables from HTML, JSON, and AJAX"
+title: "Loading Tables from HTML, JSON, and XML"
 author: "Alice Friedman"
 date: "October 9, 2018"
 output:
   prettydoc::html_pretty:
-    theme: hpstr
+    theme: leonids
     highlight: vignette
 ---
 
@@ -35,6 +35,7 @@ Then, parse the R object, ```html```, using the ```html_nodes``` function from t
 ```{r}
 books.html.table <- html_nodes(books.html, "table")
 books.html.table <- html_table(books.html.table[1], fill = TRUE) %>% as.data.frame() %>% glimpse()
+class(books.html.table)
 books.html.table %>% 
   kable() %>% kable_styling(bootstrap_options = "responsive")
 ```
@@ -45,7 +46,7 @@ First, read, the JSON obects into R using the ```jsonlite``` pakage. By setting 
 Unlike reading from HTML, this will also create a row number.
 ```{r}
 books.json <- read_json("https://raw.githubusercontent.com/aliceafriedman/DATA607_HW_WK7/master/books.json",  simplifyVector = TRUE)
-
+class(books.json)
 books.json %>% glimpse()
 books.json %>%  kable() %>% kable_styling(bootstrap_options = "responsive")
 ```
@@ -58,4 +59,20 @@ Use ```RCurl``` function ```getURL``` to download the XML file from the web, the
 ```{r}
 books.xml <- getURL("https://raw.githubusercontent.com/aliceafriedman/DATA607_HW_WK7/master/books.xml")
 books.xml <- xmlParse(books.xml)
+Title <- xpathSApply(books.xml, "//book/title", fun=xmlValue)
+Year <- xpathSApply(books.xml, "//book/Year", fun=xmlValue)
+Auth1.Last <- xpathSApply(books.xml, "//book/Auth1.Last", fun=xmlValue)
+Auth2.Last <- xpathSApply(books.xml, "//book/Auth2.Last", fun=xmlValue)
+Auth1.First <- xpathSApply(books.xml, "//book/Auth1.First", fun=xmlValue)
+Auth2.First <- xpathSApply(books.xml, "//book/Auth2.First", fun=xmlValue)
+Short.Description <- xpathSApply(books.xml, "//book/Short.Description", fun=xmlValue)
+books.xml.df <- data.frame(Title, Year, Auth1.Last, Auth1.First, Auth2.Last, Auth2.First, Short.Description)
+glimpse(books.xml.df)
+books.xml.df %>% kable() %>% kable_styling(bootstrap_options = "responsive")
 ```
+
+##Conclusion
+
+Althought the kables look identical, the XML-to-R process generates a data frame where each column is saved as a factor. The HTML and JSON files generated a file that correctly identified character and numeric values.
+  
+  
